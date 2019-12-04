@@ -1,62 +1,35 @@
-[Project]
-FileName=�ַ�ͳ��.dev
-Name=��Ŀ1
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=0
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=0
-CompilerSettings=0000000000000000001000000
-UnitCount=1
+#include <stdio.h>
+void main()
 
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
+{
+	char c;
+	int num[10]={0,0,0,0,0,0,0,0,0,0},letters=0,others=0,space=0,i,j;
+	while((c=getchar())!='\n')
+	{
+		if(c>='a'&&c<='z'||c>='A'&&c<='Z')
+		 letters++;
+		else if(c==' ')
+		 space++;
+		else if(c>='0'&&c<='9')
+		{ 
+			c=c-48;
+			num[c]++;
+		
+			
+		}
+		else
+			others++;	
+	}
+	printf("有%d个空格\n",space);
+	printf("有%d个字母\n",letters);
+	printf("有%d个其它字符\n",others);
 
-[Unit1]
-FileName=�ַ�ͳ��.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
+	for(j=0;j<10;j++)
+	{
+		if(num[j]!=0)
+		printf("%d:%d个\n",j,num[j]);
 
+	 } 
+	
+
+}
